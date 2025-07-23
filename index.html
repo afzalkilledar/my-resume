@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afzal Killedar - Resume</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            min-height: auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        /* Responsive layout for better space utilization */
+        @media screen and (min-width: 769px) {
+            .main-content {
+                max-width: calc(100% - 320px);
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .container { 
+                flex-direction: column; 
+                margin: 10px; 
+            }
+            .sidebar { 
+                width: 100%; 
+            }
+            .main-content {
+                width: 100%;
+                padding: 20px;
+            }
+            .two-column-section {
+                grid-template-columns: 1fr;
+            }
+        }
+        .sidebar {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #fff;
+            width: 320px;
+            padding: 30px 25px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #e74c3c, #f39c12);
+        }
+        .main-content {
+            flex: 1;
+            padding: 30px 40px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+        
+        /* Optimize content layout for print */
+        .content-section {
+            width: 100%;
+        }
+        
+        .two-column-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            width: 100%;
+        }
+        .name-header {
+            text-align: left;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 15px;
+        }
+        .name {
+            font-size: 2.4em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .title {
+            font-size: 1.1em;
+            color: #bdc3c7;
+            font-weight: 400;
+            font-style: italic;
+        }
+        .sidebar-section {
+            margin-bottom: 18px;
+        }
+        .sidebar-section h3 {
+            color: #3498db;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .sidebar-section h3 i {
+            margin-right: 10px;
+            font-size: 1.3em;
+            color: #e74c3c;
+        }
+        .sidebar-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-section ul li {
+            margin-bottom: 6px;
+            font-size: 0.95em;
+            line-height: 1.3;
+            padding-left: 15px;
+            position: relative;
+        }
+        .sidebar-section ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+        .contact-item {
+            margin-bottom: 8px;
+            font-size: 0.95em;
+            padding-left: 15px;
+            position: relative;
+        }
+        .contact-item::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+        }
+        .main-section h2 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            margin-top: 20px;
+            font-weight: 700;
+            page-break-after: avoid;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 6px;
+            position: relative;
+        }
+        .main-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #e74c3c;
+        }
+        .main-section:first-child h2 {
+            margin-top: 0;
+        }
+        .main-section {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+            padding: 12px 0;
+        }
+        .main-section ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .main-section ul li {
+            margin-bottom: 4px;
+            line-height: 1.3;
+            font-size: 0.92em;
+            color: #34495e;
+        }
+        .job-entry {
+            margin-bottom: 8px;
+            padding: 4px 0;
+        }
+        .job-title {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1.0em;
+            margin-bottom: 4px;
+        }
+        .company-date {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        .job-description {
+            color: #e74c3c;
+            font-size: 0.9em;
+            font-weight: 500;
+            margin-bottom: 2px;
+            line-height: 1.2;
+        }
+        .project-section {
+            margin-bottom: 6px;
+            padding: 3px 0;
+            transition: transform 0.2s ease;
+        }
+        .project-section:hover {
+            transform: translateY(-1px);
+        }
+        .project-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 3px;
+            font-size: 0.98em;
+        }
+        .project-details {
+            color: #7f8c8d;
+            font-size: 0.85em;
+            margin-bottom: 2px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .tech-table td {
+            padding: 12px 15px;
+            font-size: 0.95em;
+            vertical-align: top;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        .tech-table td:first-child {
+            font-weight: 600;
+            color: #2c3e50;
+            width: 30%;
+            background: #f8f9fa;
+        }
+        .tech-table tr:last-child td {
+            border-bottom: none;
+        }
+        .tech-table tr:hover {
+            background: #f1f2f6;
+        }
+        .pdf-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            transition: all 0.3s ease;
+        }
+        .pdf-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+        .declaration {
+            margin-top: 20px;
+            font-size: 0.95em;
+            color: #7f8c8d;
+            page-break-inside: avoid;
+            padding: 15px 0;
+            font-style: italic;
+        }
+        
+        /* Page break controls */
+        .job-entry,
+        .project-section,
+        .sidebar-section,
+        .tech-table,
+        .name-header {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        .main-section h2 {
+            page-break-after: avoid;
+            break-after: avoid;
+        }
+        
+        .main-section:not(:first-child) {
+            page-break-before: auto;
+            break-before: auto;
+        }
+        
+        .sidebar {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        /* Enhanced link styling for better visibility */
+        .project-link {
+            color: #3498db !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 15px;
+            background: rgba(52, 152, 219, 0.1);
+            display: inline-block;
+        }
+        
+        .project-link:hover {
+            color: #fff !important;
+            background: #3498db !important;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+        }
+        
+        .sidebar a {
+            color: #3498db !important;
+            text-decoration: none !important;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .sidebar a:hover {
+            color: #f39c12 !important;
+        }
+        
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            body {
+                background: #fff;
+                padding: 0;
+                margin: 0;
+                font-size: 14px;
+            }
+            .container {
+                margin: 0;
+                box-shadow: none;
+                min-height: auto;
+                border-radius: 0;
+                display: flex;
+                max-width: 100%;
+                width: 100%;
+                flex-direction: row;
+                padding: 0;
+                page-break-inside: avoid;
+            }
+            .pdf-btn {
+                display: none;
+            }
+            .sidebar {
+                width: 35%;
+                max-width: 35%;
+                min-width: 35%;
+                padding: 12px;
+                background: #2c3e50 !important;
+                margin: 0;
+                page-break-inside: avoid;
+                flex-shrink: 0;
+                display: block !important;
+                position: relative;
+            }
+            .sidebar::before {
+                display: none;
+            }
+            .main-content {
+                width: 65%;
+                max-width: 65%;
+                min-width: 65%;
+                padding: 12px;
+                margin: 0;
+                flex: 1;
+                display: block !important;
+            }
+            .main-section {
+                margin-bottom: 10px;
+                padding: 6px 0;
+                page-break-inside: avoid;
+            }
+            .main-section h2 {
+                margin-top: 8px;
+                margin-bottom: 8px;
+                font-size: 1.1em;
+                page-break-after: avoid;
+            }
+            .main-section:first-child h2 {
+                margin-top: 0;
+            }
+            .job-entry, .project-section {
+                margin-bottom: 8px;
+                padding: 6px 0;
+                page-break-inside: avoid;
+            }
+            .tech-table {
+                box-shadow: none !important;
+                border: 1px solid #ddd;
+                margin-top: 8px;
+                page-break-inside: avoid;
+            }
+            .tech-table td {
+                padding: 6px 8px;
+            }
+            .sidebar-section {
+                margin-bottom: 12px;
+                page-break-inside: avoid;
+                display: block !important;
+            }
+            .sidebar-section h3 {
+                margin-bottom: 8px;
+                font-size: 1.0em;
+                page-break-after: avoid;
+            }
+            .sidebar-section ul li {
+                margin-bottom: 5px;
+                font-size: 0.9em;
+                line-height: 1.3;
+            }
+            .contact-item {
+                margin-bottom: 7px;
+                font-size: 0.9em;
+            }
+            .name {
+                font-size: 1.8em;
+                margin-bottom: 6px;
+                page-break-after: avoid;
+            }
+            .name-header {
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+                page-break-after: avoid;
+            }
+            .title {
+                font-size: 1.0em;
+            }
+            .declaration {
+                page-break-inside: avoid;
+                margin-top: 10px;
+                font-size: 0.9em;
+            }
+            .main-section ul li {
+                margin-bottom: 5px;
+                line-height: 1.4;
+                font-size: 0.9em;
+            }
+        }
+        
+        /* PDF rendering specific styles */
+        .pdf-rendering {
+            display: flex !important;
+            width: 1400px !important;
+            flex-direction: row !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            background: white !important;
+        }
+        
+        .pdf-rendering .sidebar {
+            display: block !important;
+            width: 40% !important;
+            background: #2c3e50 !important;
+            padding: 30px 25px !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+            color: white !important;
+        }
+        
+        .pdf-rendering .main-content {
+            display: block !important;
+            width: 60% !important;
+            padding: 30px 40px !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+        }
+        
+        .pdf-rendering .name {
+            font-size: 4.8em !important;
+            margin-bottom: 8px !important;
+            color: white !important;
+            font-weight: 700 !important;
+            line-height: 1.1 !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+        }
+        
+        .pdf-rendering .title {
+            font-size: 2.2em !important;
+            color: #bdc3c7 !important;
+            margin-bottom: 25px !important;
+            font-weight: 400 !important;
+            font-style: italic !important;
+        }
+        
+        .pdf-rendering .sidebar-section {
+            margin-bottom: 18px !important;
+        }
+        
+        .pdf-rendering .sidebar-section h3 {
+            font-size: 2.4em !important;
+            margin-bottom: 15px !important;
+            color: #3498db !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+        }
+        
+        .pdf-rendering .sidebar-section ul li,
+        .pdf-rendering .contact-item {
+            font-size: 1.9em !important;
+            line-height: 1.3 !important;
+            margin-bottom: 6px !important;
+            color: white !important;
+        }
+        
+        .pdf-rendering .main-section {
+            margin-bottom: 20px !important;
+            padding: 12px 0 !important;
+        }
+        
+        .pdf-rendering .main-section h2 {
+            font-size: 2.4em !important;
+            margin-top: 20px !important;
+            margin-bottom: 12px !important;
+            color: #2c3e50 !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            border-bottom: 2px solid #3498db !important;
+            padding-bottom: 6px !important;
+        }
+        
+        .pdf-rendering .main-section:first-child h2 {
+            margin-top: 0 !important;
+        }
+        
+        .pdf-rendering .main-section ul li {
+            font-size: 1.84em !important;
+            line-height: 1.3 !important;
+            margin-bottom: 4px !important;
+            color: #34495e !important;
+        }
+        
+        .pdf-rendering .job-entry {
+            margin-bottom: 8px !important;
+            padding: 4px 0 !important;
+        }
+        
+        .pdf-rendering .job-title {
+            font-size: 2.0em !important;
+            margin-bottom: 4px !important;
+            color: #2c3e50 !important;
+            font-weight: 700 !important;
+        }
+        
+        .pdf-rendering .company-date {
+            font-size: 1.8em !important;
+            margin-bottom: 6px !important;
+            color: #7f8c8d !important;
+            font-weight: 500 !important;
+        }
+        
+        .pdf-rendering .job-description {
+            font-size: 1.8em !important;
+            line-height: 1.2 !important;
+            color: #e74c3c !important;
+            font-weight: 500 !important;
+            margin-bottom: 2px !important;
+        }
+        
+        .pdf-rendering .project-section {
+            margin-bottom: 6px !important;
+            padding: 3px 0 !important;
+        }
+        
+        .pdf-rendering .project-title {
+            font-size: 1.96em !important;
+            margin-bottom: 3px !important;
+            color: #2c3e50 !important;
+            font-weight: 700 !important;
+        }
+        
+        .pdf-rendering .project-details {
+            font-size: 1.7em !important;
+            color: #7f8c8d !important;
+            margin-bottom: 2px !important;
+        }
+        
+        .pdf-rendering .declaration {
+            font-size: 1.9em !important;
+            margin-top: 20px !important;
+            color: #7f8c8d !important;
+            padding: 15px 0 !important;
+            font-style: italic !important;
+        }
+        
+        .pdf-rendering a {
+            color: #3498db !important;
+            text-decoration: underline !important;
+            font-weight: 600 !important;
+        }
+        
+        .pdf-rendering .project-link {
+            color: #3498db !important;
+            text-decoration: underline !important;
+            font-weight: 600 !important;
+            background: none !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            display: inline !important;
+        }
+        @media (max-width: 768px) {
+            .skills-grid { 
+                grid-template-columns: 1fr; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="pdf-btn" onclick="downloadPDF()">Download as PDF</button>
+    <div class="container" id="resume-content">
+        <div class="sidebar">
+            <div class="name-header">
+                <div class="name">Abjal Killedar</div>
+                <div class="title">Principal Engineer at Harman International</div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3><i class="fa fa-phone"></i>Contact</h3>
+                <div class="contact-item"><a href="mailto:afzalkilledar@gmail.com">afzalkilledar@gmail.com</a></div>
+                <div class="contact-item"><a href="mailto:Abjal.killedar@harman.com">Abjal.killedar@harman.com</a></div>
+                <div class="contact-item">+91 9916635421</div>
+                <div class="contact-item">Bangalore, Karnataka, India</div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3><i class="fab fa-linkedin"></i>LinkedIn</h3>
+                <div class="contact-item"><a href="https://www.linkedin.com/in/afzal-killedar" target="_blank">www.linkedin.com/in/afzal-killedar</a></div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3><i class="fa fa-cogs"></i>Skills</h3>
+                <ul>
+                    <li>Requirements Management & Engineering</li>
+                    <li>Java/J2EE Enterprise Applications</li>
+                    <li>Python for Web Applications and Automations</li>
+                    <li>Spring Framework & Spring Boot Frameworks</li>
+                    <li>Microservices Architecture</li>
+                    <li>SOAP & RESTful Services</li>
+                    <li>Database Management (Oracle, MySQL, PostgreSQL)</li>
+                    <li>Team Leadership & Project Management</li>
+                    <li>SCRUM Master & AGILE Methodologies</li>
+                    <li>Code Reviews & Quality Assurance</li>
+                    <li>Problem Resolution Management</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3><i class="fa fa-tools"></i>Tools & Platforms</h3>
+                <ul>
+                    <li>IBM ALM Suite(DNG, RTC, RQM)</li>
+                    <li>Jira & Confluence</li>
+                    <li>Git, SVN, Jenkins</li>
+                    <li>SharePoint</li>
+                    <li>Aha</li>
+                    <li>Enterprise Architect(EA)</li>
+                    <li>Eclipse, Visual Studio IDE</li>
+                    <li>Apache Tomcat, JBoss</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3><i class="fa fa-graduation-cap"></i>Education</h3>
+                <ul>
+                    <li><strong>Master of Computer Applications (MCA)</strong> with Distinction
+                    <br>B V Bhoomraddi College of Engineering and Technology, Hubli (VTU)
+                    <br>2004-2007</li>
+                    <li><strong>Bachelor of Computer Applications (BCA)</strong> with Distinction
+                    <br>Anjuman Institute of Information Sciences and Management, Dharwad (KUD)
+                    <br>2001-2004</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3><i class="fa fa-language"></i>Languages</h3>
+                <ul>
+                    <li>English</li>
+                    <li>Hindi</li>
+                    <li>Kannada</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="main-section">
+                <h2>Professional Overview</h2>
+                <ul>
+                    <li><strong style="color: #2c3e50; font-size: 1.05em;">🚀 17+ Years of Comprehensive IT Excellence</strong>
+                    <br><span style="color: #154603e0; font-weight: 600; font-size: 0.9em;">📋 Requirements Management:</span> 5+ years leading requirements collection, analysis, and stakeholder coordination
+                    <br><span style="color: #154603e0; font-weight: 600; font-size: 0.9em;">🎯 Project Management:</span> 3+ years managing cross-functional teams and delivering complex enterprise solutions
+                    <br><span style="color: #154603e0; font-weight: 600; font-size: 0.9em;">👥 Team Leadership:</span> 7+ years leading development teams of up to 15 engineers across multiple countries
+                    <br><span style="color: #154603e0; font-weight: 600; font-size: 0.9em;">🏗️ Solution Architecture:</span> 7+ years designing scalable enterprise applications using modern technologies
+                    <br><span style="color: #154603e0; font-weight: 600; font-size: 0.9em;">💻 Software Development:</span> 12+ years in full-stack development, testing, and implementation of Web & Enterprise applications using JAVA/J2EE/Python technologies
+                    </li>
+                    <li><strong style="color: #ff8c42;">International Experience:</strong> Worked with Japanese clients for 3+ years including 2 years on-roll in Japan at Brainchild Inc., Tokyo, gaining valuable cross-cultural experience and international project management skills.</li>
+                    <li><strong style="color: #ff8c42;">Result-driven Requirement Manager</strong> with 2+ years of experience in the software industry.</li>
+                    <li>5+ Experience in using IBM DNG for Requirements Management and Problem Resolution Management using JIRA.</li>
+                    <li>Experience in handling SCRUM Team and coordinating Scrum ceremonies.</li>
+                    <li>Experience in managing requirements in multiple Product Lines.</li>
+                    <li>Extensive experience with database technologies: MySQL, Oracle 11g, PostgreSQL, and PLSQL stored procedures.</li>
+                    <li>Proficient in dynamic UI development using JQuery, Ajax, and modern web technologies.</li>
+                    <li>Strong background in SOAP webservices, code reviews, debugging, and Data Structures & Algorithms.</li>
+                    <li>Expert in Microservices architecture using Spring Boot & REST, Shell Scripting, OOP principles, AGILE methodologies, and TDD (JUnit).</li>
+                    <li>Comprehensive experience with version control systems (CVS, SVN, GIT) and CI/CD tools (Jenkins).</li>
+                    <li>Excellent communication skills with end-users, clients, managers, and technical teams across multiple time zones.</li>
+                    <li><strong>Leadership Experience:</strong> Successfully led teams of up to 15 engineers as Project Manager for NGIN Projects at CSI and Huawei for multiple years.</li>
+                </ul>
+            </div>
+            
+            <div class="main-section">
+                <h2>Work Experience</h2>
+                <div class="job-entry">
+                    <div class="job-title">Principal Engineer</div>
+                    <div class="company-date">Harman International | Feb 2020 – Present</div>
+                    <div class="job-description">Leading development of automotive solutions and engineering tools automation.</div>
+                </div>
+                <div class="job-entry">
+                    <div class="job-title">Senior Technical Leader</div>
+                    <div class="company-date">CSI Interfusion India Pvt. Ltd. | Nov 2017 – Feb 2020</div>
+                    <div class="job-description">Project Leader: Managed and led a team of 15+ engineers, responsible for project delivery, mentoring, and client communication for NGIN telecommunications projects.</div>
+                </div>
+                <div class="job-entry">
+                    <div class="job-title">Technical Leader</div>
+                    <div class="company-date">Huawei India Pvt. Ltd. | Jul 2011 – Oct 2017</div>
+                    <div class="job-description">Project Leader: Led multiple teams (up to 15 members) for large-scale telecom projects, overseeing development, code reviews, and team growth across 13 countries.</div>
+                </div>
+                <div class="job-entry">
+                    <div class="job-title">Consultant</div>
+                    <div class="company-date">Brainchild Inc., Tokyo, Japan | Feb 2009 – Feb 2011</div>
+                    <div class="job-description">International consulting role in Japan: 2 years on-roll experience working with Japanese clients, focusing on enterprise application development and cross-cultural project management.</div>
+                </div>
+                <div class="job-entry">
+                    <div class="job-title">Software Engineer</div>
+                    <div class="company-date">SourceMajeure Software Pvt. Ltd. | Apr 2008 – Feb 2009</div>
+                    <div class="job-description">Full-stack development using Java/J2EE technologies.</div>
+                </div>
+            </div>
+            
+            <div class="main-section">
+                <h2>Key Projects/Contributions</h2>
+                <div class="project-section">
+                    <div class="project-title">Requirements Management for P1 Transformation Goal</div>
+                    <div class="project-details">Harman International | <a href="https://alm.harman.com/ccm/web/projects/Engineering%20Excellence%20Program%20(CCM)#action=com.ibm.team.dashboard.viewDashboard" target="_blank" class="project-link">View Project Dashboard</a></div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="project-title">Harman GEN AI Knowledge Base</div>
+                    <div class="project-details">Harman International | <a href="http://ai.harman.com/" target="_blank" class="project-link">Access AI Portal</a></div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="project-title">FAISM Team Site Management</div>
+                    <div class="project-details">Harman International | <a href="https://oneharman.sharepoint.com/sites/Proj/FAISM" target="_blank" class="project-link">Visit Team Site</a></div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="project-title">Titan Web Services</div>
+                    <div class="project-details">Harman International | <a href="https://icp.harman.com/" target="_blank" class="project-link">Access Services Portal</a></div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="project-title">P1 Screens On DeveloperSites</div>
+                    <div class="project-details">Harman International | <a href="https://oneharman.sharepoint.com/sites/Proj/P1Screensondevelopersites" target="_blank" class="project-link">View Developer Portal</a></div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="project-title">Harman Techshelf Portal</div>
+                    <div class="project-details">Harman International | <a href="https://techshelf.harman.com/" target="_blank" class="project-link">Access TechShelf</a></div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="project-title">Harman Techshelf Home</div>
+                    <div class="project-details">Harman International | <a href="https://oneharman.sharepoint.com/sites/Taskforces/HarmanTechShelf" target="_blank" class="project-link">Visit TechShelf Home</a></div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="project-title">Business Management Point (NGIN-Next Generation Intelligent Network)</div>
+                    <div class="project-details">Client: Telefonica | Team size: 30 | Huawei India</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="project-title">iPortal - Unified Service Management</div>
+                    <div class="project-details">Clients: Telmex and Proximus | Team size: 20 | Huawei India</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="project-title">MNTS (Mobile Number Translation Service)</div>
+                    <div class="project-details">Clients: Telecom Egypt, STC Saudi, Indonesia | Team size: 15 | Huawei India</div>
+                </div>
+            </div>
+            
+            <div class="declaration">
+                <strong>Declaration:</strong> I hereby solemnly declare that the above information is true to my best knowledge and belief.<br><br>
+                <em>Abjal (Afzal) Killedar</em>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function downloadPDF() {
+            var element = document.getElementById('resume-content');
+            
+            // Add temporary PDF class for better rendering
+            element.classList.add('pdf-rendering');
+            
+            // Wait for the class to be applied
+            setTimeout(function() {
+                var opt = {
+                    margin: [0, 0, 0, 0],
+                    filename: 'Afzal_Killedar_Resume.pdf',
+                    image: { 
+                        type: 'jpeg', 
+                        quality: 1.0 
+                    },
+                    html2canvas: { 
+                        scale: 2.0,
+                        useCORS: true,
+                        allowTaint: true,
+                        letterRendering: true,
+                        logging: false,
+                        scrollX: 0,
+                        scrollY: 0,
+                        width: 1400,
+                        height: element.scrollHeight + 200,
+                        backgroundColor: '#ffffff',
+                        dpi: 300
+                    },
+                    jsPDF: { 
+                        unit: 'in', 
+                        format: 'a4', 
+                        orientation: 'portrait',
+                        putOnlyUsedFonts: true,
+                        floatPrecision: 16,
+                        compress: true
+                    },
+                    pagebreak: { 
+                        mode: 'css',
+                        avoid: ['tr', '.job-entry', '.project-section', '.sidebar-section']
+                    },
+                    enableLinks: true
+                };
+                
+                // Enhanced link processing
+                html2pdf().set(opt).from(element).toPdf().get('pdf').then(function (pdf) {
+                    // Get all links from both sidebar and main content
+                    var allLinks = element.querySelectorAll('a[href]');
+                    console.log('Found ' + allLinks.length + ' links to process');
+                    
+                    allLinks.forEach(function(link, index) {
+                        var url = link.getAttribute('href');
+                        var rect = link.getBoundingClientRect();
+                        
+                        console.log('Processing link ' + (index + 1) + ': ' + url);
+                        
+                        if (url && (url.startsWith('http') || url.startsWith('mailto:'))) {
+                            try {
+                                // Calculate position relative to the PDF content
+                                var elementRect = element.getBoundingClientRect();
+                                var relativeX = (rect.left - elementRect.left) * 0.75; // Scale factor
+                                var relativeY = (rect.top - elementRect.top) * 0.75;
+                                var relativeWidth = rect.width * 0.75;
+                                var relativeHeight = rect.height * 0.75;
+                                
+                                pdf.link(relativeX, relativeY, relativeWidth, relativeHeight, {url: url});
+                                console.log('Successfully added link: ' + url);
+                            } catch(e) {
+                                console.error('Failed to add link: ' + url, e);
+                            }
+                        }
+                    });
+                    
+                    pdf.save('Afzal_Killedar_Resume.pdf');
+                    element.classList.remove('pdf-rendering');
+                    console.log('PDF generated successfully with ' + allLinks.length + ' links');
+                }).catch(function(error) {
+                    console.error('PDF generation failed:', error);
+                    // Fallback to simple generation
+                    html2pdf().set(opt).from(element).save().then(function() {
+                        element.classList.remove('pdf-rendering');
+                        console.log('PDF generated with fallback method');
+                    });
+                });
+            }, 200);
+        }
+    </script>
+</body>
+</html>
